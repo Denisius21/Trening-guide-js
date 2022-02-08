@@ -104,7 +104,7 @@ function mapCallback(value, index){
   return obj;
 }*/
 
-const arr1 = [
+/*const arr1 = [
   {firstName: 'Test', lastName: 'Testovich', age: 27, gender: 'male'},
 	{firstName: 'User', lastName: 'Userovich', age: 12, gender: 'male'},
 	{firstName: 'Test`ya', lastName: 'Testovna', age: 16, gender: 'female'},		
@@ -121,5 +121,50 @@ function filterCallback(user){
   userTrue ++
   return false;
 }
-const arr2 = arr1.filter(filterCallback);
+const arr2 = arr1.filter(filterCallback);*/
+
+function Car(manufacturer, model, color, releaseYear, speed, maxSpeed, fuelConsumption, volume){
+  this.manufacturer = manufacturer;
+  this.model = model;
+  this.color = color;
+  this.releaseYear = releaseYear;
+  this.speed = speed;
+  this.maxSpeed = maxSpeed;
+  this.fuelConsumption = fuelConsumption;
+  this.volume = volume;
+}
+function CarPrototype(){
+  this.accelerate = function(){
+    if(this.speed < 150 ){
+      return this.speed += 10;
+    }else {
+      return 150;
+    }
+  }
+  this.toBrake = function(){
+    if(this.speed > 0){
+      return this.speed -= 10;
+    }else{
+      return 0;
+    }
+  }
+  this.stop = function(){
+    return this.speed = 0;
+  }
+}
+const carPrototype = new CarPrototype();
+Car.prototype = carPrototype;
+
+const car2 = new Car('BMW', 'i330', 'black', '2019', 0, 150, 0.08, 40);
+
+
+
+
+
+
+
+
+
+
+
 
