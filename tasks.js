@@ -124,6 +124,14 @@ function filterCallback(user){
 const arr2 = arr1.filter(filterCallback);*/
 
 function Car(manufacturer, model, color, releaseYear, speed, maxSpeed, fuelConsumption, volume){
+  if(typeof manufacturer !== 'string' || typeof model !== 'string' || typeof color !== 'string' || typeof releaseYear !== 'string'){
+    throw new TypeError('Enter strings');
+  }
+  else if(typeof speed !== 'number' || typeof maxSpeed !== 'number' || typeof fuelConsumption !== 'number' || typeof volume !== 'number'){
+    throw new TypeError('Enter number');
+  }
+  else if(isNaN(manufacturer + model + color + releaseYear + speed + maxSpeed + fuelConsumption + volume){
+    throw new Error ('Введите коректные данные')};
   this.manufacturer = manufacturer;
   this.model = model;
   this.color = color;
@@ -135,7 +143,7 @@ function Car(manufacturer, model, color, releaseYear, speed, maxSpeed, fuelConsu
 }
 function CarPrototype(){
   this.accelerate = function(){
-    if(this.speed < 150 ){
+    if(this.speed < maxSpeed ){
       return this.speed += 10;
     }else {
       return 150;
