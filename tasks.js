@@ -130,7 +130,7 @@ function Car(manufacturer, model, color, releaseYear, speed, maxSpeed, fuelConsu
   else if(typeof speed !== 'number' || typeof maxSpeed !== 'number' || typeof fuelConsumption !== 'number' || typeof volume !== 'number'){
     throw new TypeError('Enter number');
   }
-  else if(isNaN(manufacturer + model + color + releaseYear + speed + maxSpeed + fuelConsumption + volume){
+  else if(isNaN(manufacturer + model + color + releaseYear + speed + maxSpeed + fuelConsumption + volume)){
     throw new Error ('Введите коректные данные')};
   this.manufacturer = manufacturer;
   this.model = model;
