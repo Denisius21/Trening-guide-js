@@ -123,7 +123,7 @@ function filterCallback(user){
 }
 const arr2 = arr1.filter(filterCallback);*/
 
-function Car(manufacturer, model, color, releaseYear, speed, maxSpeed, fuelConsumption, volume){
+/*function Car(manufacturer, model, color, releaseYear, speed, maxSpeed, fuelConsumption, volume){
   if(typeof manufacturer !== 'string' || typeof model !== 'string' || typeof color !== 'string' || typeof releaseYear !== 'string'){
     throw new TypeError('Enter strings');
   }
@@ -164,15 +164,73 @@ const carPrototype = new CarPrototype();
 Car.prototype = carPrototype;
 
 const car2 = new Car('BMW', 'i330', 'black', '2019', 0, 150, 0.08, 40);
+*/
+
+/*function summ(...num){
+  number = 0;
+  for(let i=0; i<num.length;i++){
+    
+   
+    number= number + num[i];
+    
+  }return number;
+}*/
+class UserClass {
+  constructor(name, surname, age){
+    this.name = name;
+    this.surname = surname;
+    this.age = age;
+  }
+
+getFullName=() => `${this.name} ${this.surname}`;
+
+isAdult = () => this.age>=18;
+
+}
+const user2 = new UserClass('Vasya', 'Pupkin', 18);
 
 
 
 
+class ModerClass {
+  constructor(name, surname, age,email){
+    this.name = name;
+    this.surname = surname;
+    this.age = age;
+    this.email = email;
+  }
 
+getFullName=() => `${this.name} ${this.surname}`;
 
+isAdult = () => this.age>=18;
 
+createMessage= () => `${Message}`;
 
+deleteMessage = () => `${Delete}`;
 
+get name() {
+  return this._name;
+}
+
+set name(newName){
+  if(typeof newName !== 'string'){
+    throw new TypeError('Не корректные данные, должна быть строка');
+  }
+  this._name = newName;
+}
+get surname() {
+  return this._surname;
+}
+
+set surname(newsurname){
+  if(typeof newsurname !== 'string'){
+    throw new TypeError('Не корректные данные, должна быть строка');
+  }
+  this._surname = newsurname;
+}
+
+}
+const moder1 = new ModerClass('Petya','Petrov', 22, 'ader@new.com');
 
 
 
