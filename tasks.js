@@ -232,5 +232,64 @@ set surname(newsurname){
 }
 const moder1 = new ModerClass('Petya','Petrov', 22, 'ader@new.com');
 
+/////////////////////////////////////////////
+
+class Animal{
+  constructor(animalType, name, manyPaws, tail){
+    this.animalType = animalType;
+    this.name = name;
+    this.manyPaws = manyPaws;
+    this.tail = tail;
+  }
+  toMove(){
+    return 'run';
+  }
+  toEat(){
+    return 'chew';
+  }
+  makesSounds(){
+    return 'sound';
+  }
+}
+class snake extends Animal{
+  constructor(animalType, name, manyPaws, tail){
+    super(animalType, name, manyPaws, tail);
+  }
+  toMove(){
+    return 'crawl';
+  }
+  makesSounds(){
+    return 'hisses';
+  }
+
+}
+class lion extends snake{
+  constructor(animalType, name, manyPaws, tail){
+    super(animalType, name, manyPaws, tail);
+  }
+  toMove(){
+    return 'running fast';
+  }
+  makesSounds(){
+    return 'lions roar';
+  }
+
+}
+
+class Trainer{
+  constructor(name, lastName, age){
+   this.name = name;
+   this.lastName=lastName;
+   this.age=age;
+  }
+
+  trainingAnimal(animal){
+    return animal.makesSounds();
+  }
+}
+
+const trainer1 = new Trainer('Vasya', 'Vasylivich', 42);
+const snake1 = new snake('snake', 'pythone', 'notPaws', 'longTail');
+const lion1 = new lion('lion','African lion', '4Paws', 'longTail');
 
 
